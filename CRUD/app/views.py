@@ -92,6 +92,10 @@ class ChoiceView(views.APIView):
 
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+# class ChoiceView(generics.RetrieveUpdateDestroyAPIView):
+#     queryset = Choice.objects.all()
+#     serializer_class = ChoiceSerializer
+
 @api_view(['GET'])
 def question_and_choices(request, question_id):
     # question_id = request.GET.get('question_id')
