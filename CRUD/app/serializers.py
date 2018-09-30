@@ -3,7 +3,6 @@ from rest_framework import serializers
 
 
 class QuestionSerializer(serializers.HyperlinkedModelSerializer):
-    #choices = serializers.PrimaryKeyRelatedField(read_only=True, many=True)
 
     class Meta:
         model = Question
