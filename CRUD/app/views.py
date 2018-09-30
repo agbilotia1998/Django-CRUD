@@ -1,7 +1,5 @@
 # Create your views here.
 from django.http import HttpResponse
-from .models import Question, Choice
-from .serializers import QuestionSerializer, ChoiceSerializer
 from rest_framework.response import Response
 from rest_framework import views, status
 from rest_framework.request import Request
@@ -9,12 +7,14 @@ from rest_framework.test import APIRequestFactory
 from rest_framework.decorators import api_view
 from rest_framework import generics
 
+from .models import Question, Choice
+from .serializers import QuestionSerializer, ChoiceSerializer
+
 factory = APIRequestFactory()
 request = factory.get('/')
 serializer_context = {
     'request': Request(request),
 }
-
 
 class IndexView(views.APIView):
     def get(self, request):
